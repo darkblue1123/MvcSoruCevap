@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model MvcSoruCevap.Models.Question
+
+    <h1>Soru Sil</h1>
+
+    <p>@Model.Title başlıklı soruyu silmek istediğinizden emin misiniz?</p>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" asp-for="QuestionId" />
+        <button type="submit" class="btn btn-danger">Sil</button>
+        <a href="/Question" class="btn btn-secondary">İptal</a>
+    </form>
+
+}

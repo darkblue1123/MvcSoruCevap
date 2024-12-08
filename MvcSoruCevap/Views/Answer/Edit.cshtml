@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model MvcSoruCevap.Models.Answer
+
+<h1>Cevap Düzenle</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="AnswerId" />
+    <input type="hidden" asp-for="QuestionId" />
+    <div class="form-group">
+        <label for="Content">Cevap</label>
+        <textarea class="form-control" asp-for="Content"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="UserId">Kullanıcı</label>
+        <select class="form-control" asp-for="UserId">
+            @foreach (var user in ViewBag.Users)
+            {
+            //    <option value="@user.UserId" @(user.UserId == Model.UserId ? "selected" : null)>@user.Username</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
+
+}
